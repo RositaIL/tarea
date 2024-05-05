@@ -1,0 +1,74 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+	var httpContext = ViewContext.HttpContext;
+}
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="welcome-section">
+	<div id="carouselExampleIndicators" class="carousel slide p-3" data-bs-ride="carousel" data-bs-interval="3000">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active mb-2"
+					aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+					aria-label="Slide 2" class="mb-2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+					aria-label="Slide 3" class="mb-2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+					aria-label="Slide 4" class="mb-2"></button>
+
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="../imagenes/slider4.jpg" class="d-block w-100 img-fluid rounded border border-secondary shadow-lg p-2" style="max-height: 350px">
+				<div class="carousel-caption d-none d-md-block">
+					<h5><strong><em>Encuentre productos de calidad en su minimarket de confianza</em></strong></h5>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="../imagenes/slider3.jpg" class="d-block w-100 img-fluid rounded border border-secondary shadow-lg p-2" style="max-height: 350px">
+			</div>
+			<div class="carousel-item">
+				<img src="../imagenes/slider2.jpg" class="d-block w-100 img-fluid rounded border border-secondary shadow-lg p-2" style="max-height: 350px">
+			</div>
+			<div class="carousel-item">
+				<img src="../imagenes/slider1.jpg" class="d-block w-100 img-fluid rounded border border-secondary shadow-lg p-2" style="max-height: 350px">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Anterior</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Siguiente</span>
+		</button>
+	</div>
+</section>
+<section class="bg-light py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2">
+				<h4 class="text-center mb-4 fw-bold fs-4 text-uppercase">Sistema de Control de Inventario</h4>
+				<p class="text-center mb-4 fs-5 text-muted">Nuestro sistema de control de inventario ha sido diseñado específicamente para ayudarte a gestionar de manera eficiente los productos de tu minimarket.</p>
+				<p class="text-center mb-4 fs-6 text-primary">¡Simplifica la gestión de tu minimarket y enfócate en brindar la mejor experiencia a tus clientes!</p>
+				@if (httpContext.Session.Get("Usuario") != null)
+				{
+					<p class="text-center mb-4 fs-6 text-secondary">Bienvenido al sistema,</p>
+					<p class="text-center mb-4 fs-6 text-secondary">@httpContext.Session.GetString("nombreUsu").ToUpper()</p>
+				}
+				else
+				{
+					<p class="text-center mb-4 fs-6 text-secondary">Para empezar, inicia sesión haciendo clic en el botón a continuación:</p>
+					<div class="text-center">
+						<a asp-action="Login" class="btn btn-primary">Iniciar Sesión</a>
+					</div>
+				}		
+			</div>
+		</div>
+	</div>
+</section>
+

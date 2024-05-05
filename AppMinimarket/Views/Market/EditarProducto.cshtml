@@ -1,0 +1,62 @@
+﻿@model AppMinimarket.Models.Producto
+
+@{
+    ViewData["Title"] = "EditarProducto";
+}
+
+<div class="d-flex justify-content-center align-items-center pt-2 pb-2">
+    <div class="row text-center col-md-6">
+        <h3>Editar el Producto</h3>
+        <div class="col-md-12">
+            <form asp-action="EditarProducto">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="idProducto" class="control-label"></label>
+                    <input asp-for="idProducto" class="form-control" readonly />
+                    <span asp-validation-for="idProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="nombreProd" class="control-label"></label>
+                    <input asp-for="nombreProd" class="form-control" />
+                    <span asp-validation-for="nombreProd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="descripcion" class="control-label"></label>
+                    <input asp-for="descripcion" class="form-control" />
+                    <span asp-validation-for="descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="precio" class="control-label"></label>
+                    <input asp-for="precio" class="form-control" />
+                    <span asp-validation-for="precio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="stock" class="control-label"></label>
+                    <input asp-for="stock" class="form-control" />
+                    <span asp-validation-for="stock" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="idCategoria" class="control-label"></label>
+                    <select asp-for="idCategoria" asp-items=@ViewBag.categorias class="form-select"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="idMarca" class="control-label"></label>
+                    <select asp-for="idMarca" asp-items=@ViewBag.marcas class="form-select"></select>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Grabar" class="btn btn-info" />
+                    <a asp-action="Productos" class="btn btn-outline-info">Regresar</a>
+                </div>
+            </form>
+        </div>
+        <br />
+        @if (!string.IsNullOrEmpty(ViewBag.mensaje))
+        {
+            <div class="alert alert-info alert-dismissible fade show mt-2" role="alert">
+                @ViewBag.mensaje
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+    </div>
+</div>

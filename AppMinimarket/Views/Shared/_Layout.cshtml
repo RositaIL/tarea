@@ -1,0 +1,73 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var httpContext = ViewContext.HttpContext;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AppMinimarket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AppMinimarket.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-action="Index">Minimarket Freshmarket</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Configuraciones
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-action="Productos">Panel de productos</a></li>
+                                <li><a class="dropdown-item" asp-action="Marcas">Panel de marcas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            @if (httpContext.Session.Get("Usuario") != null)
+                            {
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Perfil: @httpContext.Session.GetString("nombreUsu")
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-action="Logout">Cerrar Sesión</a></li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <a class="nav-link" href="/Market/Login">Iniciar Sesión</a>
+                            }
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" asp-action="Index">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p>&copy; 2024 - Minimarket Freshmarket - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

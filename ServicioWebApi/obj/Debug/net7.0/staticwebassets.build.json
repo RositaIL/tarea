@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "v/ETRJWxqpt0qgOSyhQUY9Jp889xsKW6IRfO4qMr8Z8=",
+  "Source": "ServicioWebApi",
+  "BasePath": "_content/ServicioWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

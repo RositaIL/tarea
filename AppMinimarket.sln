@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMinimarket", "AppMinimarket\AppMinimarket.csproj", "{1644829E-841D-40E8-9302-AF67CBFFB5DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioWebApi", "ServicioWebApi\ServicioWebApi.csproj", "{26FCF881-C750-46EC-A1F2-E052E3DD978B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1644829E-841D-40E8-9302-AF67CBFFB5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1644829E-841D-40E8-9302-AF67CBFFB5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1644829E-841D-40E8-9302-AF67CBFFB5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1644829E-841D-40E8-9302-AF67CBFFB5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FCF881-C750-46EC-A1F2-E052E3DD978B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FCF881-C750-46EC-A1F2-E052E3DD978B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FCF881-C750-46EC-A1F2-E052E3DD978B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FCF881-C750-46EC-A1F2-E052E3DD978B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70181E1B-B8F5-4B45-AC67-1D0319A14B9E}
+	EndGlobalSection
+EndGlobal
